@@ -1,3 +1,28 @@
+/* TYPING */
+const typingText = document.querySelector(".typing-text");
+const text = "Lukman Al Khakim";
+let index = 0;
+
+function type(){
+    if(index < text.length){
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type,80);
+    }
+}
+type();
+
+/* REVEAL ANIMATION */
+function reveal(){
+    const elements = document.querySelectorAll(".reveal-up");
+    elements.forEach(el=>{
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            el.classList.add("active");
+        }
+    });
+}  
 // ================= SMOOTH SCROLL =================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
