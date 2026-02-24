@@ -380,5 +380,25 @@ footer {
 .reveal-up.active {
     opacity: 1;
     transform: translateY(0);
+    /* ANIMATION */
+.reveal-up{
+opacity:0;
+transform:translateY(80px);
+transition:all 0.8s ease;
 }
+
+.reveal-up.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.typing-text::after{
+content:"|";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
 }
